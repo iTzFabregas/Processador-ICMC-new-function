@@ -3,8 +3,8 @@ jmp main
 ;---- Inicio do Programa Principal -----
 
 main:
-	loadn r0, #420
-	loadn r1, #120
+	loadn r0, #20
+	loadn r1, #2
 	pow r0, r0, r1
 	call ColocarPersonagem
 
