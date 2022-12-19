@@ -109,6 +109,7 @@
 #define NOP_CODE                0
 #define INPUT_CODE              96
 #define OUTPUT_CODE             97
+#define POW_CODE                98
 
 /* Definicoes dos op codes (binarios em strings) */
 
@@ -136,6 +137,7 @@
 #define DIV             "100011"
 #define INC             "100100"
 #define LMOD            "100101"
+#define POW             "100110"
 
 
 /* Logic Instructions (All should begin with "01"): */

@@ -2204,6 +2204,22 @@ void MontarInstrucoes(void)
                     parser_SkipUntilEnd();
                     break;
 
+                case POW_CODE :
+                    str_tmp1 = parser_GetItem_s(); /* TIRA O POW */
+                    val1 = BuscaRegistrador(str_tmp1);
+                    free(str_tmp1);
+                    str_tmp2 = parser_GetItem_s();
+                    val2 = BuscaRegistrador(str_tmp2);
+                    free(str_tmp2);
+                    str_tmp1 = ConverteRegistrador(val1);
+                    str_tmp2 = ConverteRegistrador(val2);
+                    sprintf(str_msg,"%s%s%s0",POW,str_tmp1,str_tmp2);
+                    free(str_tmp1);
+                    free(str_tmp2);
+                    parser_Write_Inst(str_msg,end_cnt);
+                    end_cnt += 1;
+                    break;
+                    
                 default :
                     parser_SkipUntilEnd();
                     parser_Warning("Instrucao invalida!");
