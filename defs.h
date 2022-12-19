@@ -359,6 +359,9 @@
 #define SP_STR   "SP"
 /* #define REGZ_STR "RZ" */
 
+/* New functions*/
+#define POW_STR "POW"
+
 /*
 
   Modelo de memoria

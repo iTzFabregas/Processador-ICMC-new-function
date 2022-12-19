@@ -120,7 +120,7 @@ void AdicionarLabelsFixos(void)
 }
 
 /* Atencao: Uma instrucao por linha e um label por linha apenas! */
-void DetectarLabels(void)
+void    DetectarLabels(void)
 {
 
     parser_Init();
@@ -246,6 +246,7 @@ void DetectarLabels(void)
             case AND_CODE :
             case OR_CODE :
             case XOR_CODE :
+            case POW_CODE : 
                 parser_SkipUntil(',');
                 parser_SkipUntil(',');
                 parser_SkipUntilEnd();
@@ -813,7 +814,6 @@ void MontarInstrucoes(void)
                     parser_Write_Inst(str_msg,end_cnt);
                     end_cnt += 1;
                     break;
-
                 /* ==============
                    Inc Rx
                    Observacoes: Inc nao funcionara corretamente para nos. complemento de 2.
@@ -2204,22 +2204,29 @@ void MontarInstrucoes(void)
                     parser_SkipUntilEnd();
                     break;
 
-                case POW_CODE :
+                case POW_CODE : // pow R1, R2, R3
                     str_tmp1 = parser_GetItem_s(); /* TIRA O POW */
                     val1 = BuscaRegistrador(str_tmp1);
                     free(str_tmp1);
+                    parser_Match(',');
                     str_tmp2 = parser_GetItem_s();
                     val2 = BuscaRegistrador(str_tmp2);
                     free(str_tmp2);
+                    parser_Match(',');
+                    str_tmp3 = parser_GetItem_s();
+                    val3 = BuscaRegistrador(str_tmp3);
+                    free(str_tmp3);
                     str_tmp1 = ConverteRegistrador(val1);
                     str_tmp2 = ConverteRegistrador(val2);
-                    sprintf(str_msg,"%s%s%s0",POW,str_tmp1,str_tmp2);
+                    str_tmp3 = ConverteRegistrador(val3);
+                    sprintf(str_msg,"%s%s%s%s0",POW,str_tmp1,str_tmp2,str_tmp3);
                     free(str_tmp1);
                     free(str_tmp2);
+                    free(str_tmp3);
                     parser_Write_Inst(str_msg,end_cnt);
                     end_cnt += 1;
                     break;
-                    
+
                 default :
                     parser_SkipUntilEnd();
                     parser_Warning("Instrucao invalida!");
@@ -2654,6 +2661,10 @@ int BuscaInstrucao(char * nome)
     else if (strcmp(str_tmp,ALLOC_STR) == 0)
     {
         return ALLOC_CODE;
+    }
+    else if (strcmp(str_tmp,POW_STR) == 0)
+    {
+        return POW_CODE;   
     }
 
     return LABEL_CODE;
