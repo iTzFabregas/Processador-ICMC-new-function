@@ -4,7 +4,7 @@ jmp main
 
 main:
 	loadn r0, #20
-	loadn r1, #2
+	loadn r1, #3
 	pow r0, r0, r1
 	call ColocarPersonagem
 
