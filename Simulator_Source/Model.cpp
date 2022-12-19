@@ -735,6 +735,23 @@ void Model::processador()
 						FR[5] = 1;  // Arithmetic Overflow
         break;
 
+	  case POW:
+		reg[rx] = reg[ry] * reg[rz];
+
+		if (pega_pedaco(ir, 0, 0) == 1) {
+			reg[rx] += FR[4];
+		}
+
+		FR[3] = 0; // -- FR = <...|zero|equal|lesser|greater>
+		FR[5] = 0;
+
+		if(!reg[rx])
+			FR[3] = 1;  // Se resultado = 0, seta o Flag de Zero
+        else
+        	if(reg[rx] > 0xffff)
+				FR[5] = 1;  // Arithmetic Overflow
+        break;
+
       case DIV:
         if(!reg[rz])
 				{ FR[6] = 1;  // Arithmetic Overflow

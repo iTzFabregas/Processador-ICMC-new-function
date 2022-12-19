@@ -33,6 +33,7 @@
 #define HALT 15
 #define SETC 8
 #define BREAKP 14
+#define POW 98
 
 #define TAM 5       // Numero de instrucoes de duas linhas
 
