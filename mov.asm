@@ -4,10 +4,25 @@ jmp main
 
 main:
 
-    loadn r1, #4
+    loadn r1, #2
 	loadn r2, #900
-	pow r0, r1, r2
-	rand r2, r0, r1
+	rand r0, r1, r2
+	rand r0, r1, r2
+	rand r0, r1, r2
+	rand r0, r1, r2
+	rand r0, r1, r2
+	rand r0, r1, r2
+	rand r0, r1, r2
+	rand r0, r1, r2
+	rand r0, r1, r2
+	rand r0, r1, r2
+	rand r0, r1, r2
+	rand r0, r1, r2
+	rand r0, r1, r2
+	rand r0, r1, r2
+	loadn r0, #111
+	loadn r1, #111
+	loadn r2, #111
 	call ColocarPersonagem
 
 	halt

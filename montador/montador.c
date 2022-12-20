@@ -2233,8 +2233,8 @@ void MontarInstrucoes(void)
                     end_cnt += 1;
                     break;
                
-                case RAND_CODE : // pow R1, R2, R3
-                    str_tmp1 = parser_GetItem_s(); /* TIRA O POW */
+                case RAND_CODE :
+                    str_tmp1 = parser_GetItem_s();
                     val1 = BuscaRegistrador(str_tmp1);
                     free(str_tmp1);
                     parser_Match(',');
@@ -2248,7 +2248,7 @@ void MontarInstrucoes(void)
                     str_tmp1 = ConverteRegistrador(val1);
                     str_tmp2 = ConverteRegistrador(val2);
                     str_tmp3 = ConverteRegistrador(val3);
-                    sprintf(str_msg,"%s%s%s%s0",POW,str_tmp1,str_tmp2,str_tmp3);
+                    sprintf(str_msg,"%s%s%s%s0",RAND,str_tmp1,str_tmp2,str_tmp3);
                     free(str_tmp1);
                     free(str_tmp2);
                     free(str_tmp3);
