@@ -337,6 +337,11 @@ void    DetectarLabels(void)
             case BREAKP_CODE :	    
             case SETC_CODE :
             case CLEARC_CODE :
+            case SQRT_CODE :
+                parser_SkipUntil(',');
+                parser_SkipUntilEnd();
+                end_cnt++;
+                break;
             case NOP_CODE :
                 end_cnt++;
                 break;
@@ -2226,6 +2231,23 @@ void MontarInstrucoes(void)
                     parser_Write_Inst(str_msg,end_cnt);
                     end_cnt += 1;
                     break;
+                
+                case SQRT_CODE : // SQRT R1
+                    str_tmp1 = parser_GetItem_s(); /* TIRA O POW */
+                    val1 = BuscaRegistrador(str_tmp1);
+                    free(str_tmp1);
+                    parser_Match(',');
+                    str_tmp2 = parser_GetItem_s();
+                    val2 = BuscaRegistrador(str_tmp2);
+                    free(str_tmp2);
+                    str_tmp1 = ConverteRegistrador(val1);
+                    str_tmp2 = ConverteRegistrador(val2);
+                    sprintf(str_msg,"%s%s%s0",SQRT,str_tmp1,str_tmp2);
+                    free(str_tmp1);
+                    free(str_tmp2);
+                    parser_Write_Inst(str_msg,end_cnt);
+                    end_cnt += 1;
+                    break;
 
                 default :
                     parser_SkipUntilEnd();
@@ -2665,6 +2687,10 @@ int BuscaInstrucao(char * nome)
     else if (strcmp(str_tmp,POW_STR) == 0)
     {
         return POW_CODE;   
+    }
+    else if (strcmp(str_tmp,SQRT_STR) == 0)
+    {
+        return SQRT_CODE;   
     }
 
     return LABEL_CODE;
