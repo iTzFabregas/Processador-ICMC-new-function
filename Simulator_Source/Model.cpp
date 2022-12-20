@@ -1,4 +1,7 @@
 #include "Model.h"
+#include "Mneumonicos.h"
+#include <cstdlib>
+#include <ctime>
 #include <iostream>
 
 void* processaAutomatico(void *data)
@@ -736,7 +739,9 @@ void Model::processador()
         break;
 
 	  case POW:
-		reg[rx] = pow(reg[ry],reg[rz]);
+		srand((unsigned) time(NULL));
+		reg[rx] = (rand() % reg[rz]) + ry ;
+	//	reg[rx] = pow(reg[ry],reg[rz]);
 
 		if (pega_pedaco(ir,0,0) == 1) {
 			reg[rx] += FR[4];
@@ -752,7 +757,24 @@ void Model::processador()
 			}
 		}
         break;
+    
+	  case RAND:
+		reg[rx] = 3;
 
+		if (pega_pedaco(ir,0,0) == 1) {
+			reg[rx] += FR[4];
+			FR[3] = 0; // -- FR = <...|zero|equal|lesser|greater>
+			FR[5] = 0;
+		}
+
+		if(!reg[rx]) {
+			FR[3] = 1;  // Se resultado = 0, seta o Flag de Zero
+		} else {
+        	if(reg[rx] > 0xffff) {
+				FR[5] = 1;  // Arithmetic Overflow
+			}
+		}
+        break;
       case DIV:
         if(!reg[rz])
 				{ FR[6] = 1;  // Arithmetic Overflow

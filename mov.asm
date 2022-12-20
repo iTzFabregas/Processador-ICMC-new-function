@@ -3,9 +3,11 @@ jmp main
 ;---- Inicio do Programa Principal -----
 
 main:
-	loadn r0, #20
-	loadn r1, #3
-	pow r0, r0, r1
+
+    loadn r1, #4
+	loadn r2, #900
+	pow r0, r1, r2
+	rand r2, r0, r1
 	call ColocarPersonagem
 
 	halt

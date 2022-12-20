@@ -34,6 +34,7 @@
 #define SETC 8
 #define BREAKP 14
 #define POW 38
+#define RAND 39
 
 #define TAM 5       // Numero de instrucoes de duas linhas
 

@@ -110,6 +110,7 @@
 #define INPUT_CODE              96
 #define OUTPUT_CODE             97
 #define POW_CODE                98
+#define RAND_CODE               99
 
 /* Definicoes dos op codes (binarios em strings) */
 
@@ -138,6 +139,7 @@
 #define INC             "100100"
 #define LMOD            "100101"
 #define POW             "100110"
+#define RAND            "100111"
 
 
 /* Logic Instructions (All should begin with "01"): */
@@ -361,6 +363,7 @@
 
 /* New functions*/
 #define POW_STR "POW"
+#define RAND_STR "RAND"
 
 /*
 
