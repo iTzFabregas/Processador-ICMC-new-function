@@ -110,6 +110,7 @@
 #define INPUT_CODE              96
 #define OUTPUT_CODE             97
 #define POW_CODE                98
+#define SQRT_CODE               99
 
 /* Definicoes dos op codes (binarios em strings) */
 
@@ -138,7 +139,7 @@
 #define INC             "100100"
 #define LMOD            "100101"
 #define POW             "100110"
-
+#define SQRT            "100111"
 
 /* Logic Instructions (All should begin with "01"): */
 #define LAND            "010010"
@@ -360,7 +361,8 @@
 /* #define REGZ_STR "RZ" */
 
 /* New functions*/
-#define POW_STR "POW"
+#define POW_STR  "POW"
+#define SQRT_STR "SQRT"
 
 /*
 
