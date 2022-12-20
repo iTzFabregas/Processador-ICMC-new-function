@@ -12,6 +12,9 @@
 
 * Função FATORIAL implementada (em breve)
 
+## Como foi implementado
+Em construção
+
 ## Participantes
 * Fabrício Sampaio
 * Guilherme Augusto Moreira
