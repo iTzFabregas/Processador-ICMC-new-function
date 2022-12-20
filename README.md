@@ -1,5 +1,7 @@
 # Processador-ICMC-new-function
 
+## Funções implementadas
+
 * Função POW implementada
 ```bash
   pow RX, RY, RZ
@@ -10,7 +12,7 @@
 
 * Função FATORIAL implementada (em breve)
 
-## PArticipantes
+## Participantes
 * Fabrício Sampaio
 * Guilherme Augusto Moreira
 * Michel Hecker Faria
