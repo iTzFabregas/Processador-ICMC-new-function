@@ -338,6 +338,10 @@ void View::show_program(int linha, int pc, int sp)
 
     case BREAKP: sprintf(texto, "PC: %05d\t|	BREAKP #%05d		|	Break Point", pc, model->pega_pedaco(ir,9,0)); break;
 
+
+	case SQRT:	sprintf(texto, "PC: %05d\t|	SQRT R%d, R%d, R%d		|	R%d <- R%d ^ R%d", 		pc, _rx, _ry, _rz, _rx, _ry, _rz); break;
+
+
 		default: 
 			cout << "ERRO - show program linha: " << linha << " pc " << pc << endl;
 			break;

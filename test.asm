@@ -10,5 +10,5 @@ main:
     add r0, r2, r0
 
     outchar r0, r1
-
-    halt
+    
+    jmp main
