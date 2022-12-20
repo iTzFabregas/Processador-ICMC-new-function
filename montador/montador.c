@@ -258,6 +258,7 @@ void    DetectarLabels(void)
 	        case MOV_CODE :
             case OUTCHAR_CODE :
             case CMP_CODE :
+            case SQRT_CODE : 
                 parser_SkipUntil(',');
                 parser_SkipUntilEnd();
                 end_cnt++;
@@ -337,7 +338,6 @@ void    DetectarLabels(void)
             case BREAKP_CODE :	    
             case SETC_CODE :
             case CLEARC_CODE :
-            case SQRT_CODE :
                 parser_SkipUntil(',');
                 parser_SkipUntilEnd();
                 end_cnt++;
@@ -2233,7 +2233,7 @@ void MontarInstrucoes(void)
                     break;
                 
                 case SQRT_CODE : // SQRT R1
-                    str_tmp1 = parser_GetItem_s(); /* TIRA O POW */
+                    str_tmp1 = parser_GetItem_s();
                     val1 = BuscaRegistrador(str_tmp1);
                     free(str_tmp1);
                     parser_Match(',');
@@ -2242,7 +2242,7 @@ void MontarInstrucoes(void)
                     free(str_tmp2);
                     str_tmp1 = ConverteRegistrador(val1);
                     str_tmp2 = ConverteRegistrador(val2);
-                    sprintf(str_msg,"%s%s%s0",SQRT,str_tmp1,str_tmp2);
+                    sprintf(str_msg,"%s%s%s0000",SQRT,str_tmp1,str_tmp2);
                     free(str_tmp1);
                     free(str_tmp2);
                     parser_Write_Inst(str_msg,end_cnt);
