@@ -22,7 +22,7 @@ No simulador os arquivos são: ```Mneumonicos.h``` e ```Model.cpp```
   ```
   * FUNCAO_STR  -> modo como a função será chamada no assembly, em CAPS
   ```bash
-   #define FUNCAO "FUNCAO"
+   #define FUNCAO_STR "FUNCAO"
   ```
 
 * ```montador.c``` -> mexeremos em 3 funções
