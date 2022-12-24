@@ -15,7 +15,7 @@ Trabalho para substituição da prova da disciplina de Organização e Arquitetu
 * Função FATORIAL implementada (em breve)
 
 ## Como foi implementado
-Em construção
+[Tutorial para implementação de uma nova função.](https://github.com/iTzFabregas/Processador-ICMC-new-function/blob/master/TUTORIAL_NEW_FUNCTION.md)
 
 ## Participantes
 * Fabrício Sampaio - POW
