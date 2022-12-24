@@ -18,7 +18,7 @@ Trabalho para substituição da prova da disciplina de Organização e Arquitetu
 Em construção
 
 ## Participantes
-* Fabrício Sampaio
-* Guilherme Augusto Moreira
-* Michel Hecker Faria
-* Vitor Nishimura Vian
+* Fabrício Sampaio - POW
+* Guilherme Augusto Moreira - FATORIAL
+* Michel Hecker Faria - SQRT
+* Vitor Nishimura Vian - RAND
