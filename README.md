@@ -8,17 +8,6 @@ Trabalho para substituição da prova da disciplina de Organização e Arquitetu
 ```bash
   pow RX, RY, RZ
    ```
-* Função RAND implementada (em breve)
-
-* Função SQRT implementada (em breve)
-
-* Função FATORIAL implementada (em breve)
 
 ## Como foi implementado
 [Tutorial para implementação de uma nova função.](https://github.com/iTzFabregas/Processador-ICMC-new-function/blob/master/TUTORIAL_NEW_FUNCTION.md)
-
-## Participantes
-* Fabrício Sampaio - POW
-* Guilherme Augusto Moreira - FATORIAL
-* Michel Hecker Faria - SQRT
-* Vitor Nishimura Vian - RAND
